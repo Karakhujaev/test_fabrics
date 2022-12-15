@@ -4623,6 +4623,7 @@ pre code {
     right: 75%;
 }
 
+
 .col-xs-pull-10 {
     right: 83.33333%;
 }
@@ -7889,6 +7890,8 @@ tbody.collapse.in {
     td.visible-md {
         display: table-cell !important;
     }
+
+    
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
