@@ -125,3 +125,4 @@ class BlogDetail(models.Model):
 
     class Meta:
         verbose_name = "Blog Tavsifi"
+

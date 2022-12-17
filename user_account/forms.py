@@ -44,4 +44,4 @@ class RegistrationForm(forms.Form):
 
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=50, label='', widget=forms.TextInput(attrs={'placeholder': 'username'}))
-    password = forms.CharField(max_length=50, label='', widget=forms.PasswordInput(attrs={'placeholder': 'username'}))
+    password = forms.CharField(max_length=50, label='', widget=forms.PasswordInput(attrs={'placeholder': 'password'}))

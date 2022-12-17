@@ -3,6 +3,9 @@
 {% block title %}Cart{% endblock %}
 
 {% block content %}
+<head>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
 <main data-aos="fade" data-aos-delay="0">
     <div class="main-content">
         <!-- breadcrumb -->
@@ -45,11 +48,12 @@
                                 so'm</font></font></h3>
                             <div class="products-cnt-form" data-counter="1">
                                 <a class="dicrement__item"
-                                   href="{% url 'fabrics_main:change_quantity' s.product.id %}?action=decrease">-</a>
+                                href="{% url 'fabrics_main:change_quantity' s.product.id %}?action=decrease">-</a>
                                 <h class="justify-content-between"><strong>{{ s.quantity }}</strong></h>
-                                <a class="increment__item"
-                                   href="{% url 'fabrics_main:change_quantity' s.product.id %}?action=increase"  >+</a>
-
+                                <a 
+                                    class="increment__item"
+                                    href="{% url 'fabrics_main:change_quantity' s.product.id %}?action=increase"
+                                >+</a>
                             </div>
                         </div>
                     </div>
@@ -89,4 +93,5 @@
         </div>
     </div>
 </main>
+<script type="text/javascript"></script>
 {% endblock %}
