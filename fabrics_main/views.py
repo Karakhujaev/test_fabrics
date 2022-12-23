@@ -54,6 +54,7 @@ class SelectSearchView(ListView):
         return object_list
 
 
+from django.core.paginator import Paginator
 @login_required
 def menu_product(request, pk):
     """Fuction for menu products"""
@@ -108,7 +109,6 @@ class CategoryProduct(LoginRequiredMixin, TemplateView):
 class SubcategoryProduct(LoginRequiredMixin, TemplateView):
     """Class for subcategory."""
     template_name = 'product/subcategory-product.html'
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         pk = self.kwargs['pk']
@@ -187,14 +187,11 @@ def view_cart(request):
     return render(request, 'card/cart.html', context=context)
 
 
-class CartAllDeleteView(View):
-    """Delete all cart items view."""
-
-    def get(self, request, *args, **kwargs):
-        cart = Cart(request)
-        cart.save()
-        return redirect('fabrics_main:view_cart')
-
+def delete_all(request):
+    """Function for remove prodct from cart."""
+    cart = Cart(request)
+    cart = cart.clear()
+    return redirect('fabrics_main:view_cart')
 
 
 def checkout(request):

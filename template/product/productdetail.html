@@ -71,15 +71,16 @@
 									</span>
                                     </div>
                                     <div class="float-left-md p-h-15 m-v-30">
-                                        <form class="" action="#" method="post">
+                                        <div class="post">
                                             <input type="hidden" name="id" value="1854">
                                             <input type="hidden" name="izbr" value="1"/>
-                                            <span class="btn btn-opacity reverse flex-center inline-block">
-									<i class="ls-like"></i>
-									<button type="submit" style="border: none;background: none; ">В избранное</button>
-								</span>
-                                        </form>
-
+                                                <span unique="{{ product.pk }}" id="favourite" onclick="favourite()" class="btn btn-opacity reverse flex-center inline-block">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" id="heart" fill="#f7721ced" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                                      </svg>
+                                                    <button id="liked-btn"  style="border: none;background: none; ">LIKE</button>
+                                                </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -170,4 +171,49 @@
             </div>
         </div>
     </main>
+
+    <script>
+        const box = document.getElementById("favourite");
+        const text = document.getElementById("liked-btn");
+        const heart = document.getElementById("heart");
+
+        const unique = box.getAttribute("unique")
+
+        let active = localStorage.getItem(unique);
+
+        if(localStorage.getItem(unique) ){
+            box.style.borderColor = "red";
+            text.innerHTML = "LIKED";
+            heart.style.fill = "red";
+            text.style.color = "red";
+
+        } else {
+            box.style.borderColor = "black";
+            text.innerHTML = "LIKE";
+            heart.style.fill = "#f46f1c";
+            text.style.color = "black";
+        }
+        
+        function favourite() {
+            localStorage.getItem(unique) 
+                ? localStorage.removeItem(unique) 
+                : localStorage.setItem(unique, true)
+
+            if(localStorage.getItem(unique) ){
+                box.style.borderColor = "red";
+                text.innerHTML = "LIKED";
+                heart.style.fill = "red";
+                text.style.color = "red";
+            } else {
+                box.style.borderColor = "black";
+                text.innerHTML = "LIKE";
+                heart.style.fill = "#f46f1c";
+                text.style.color = "black";
+                
+            }
+        }
+
+        
+
+    </script>
 {% endblock %}

@@ -3,9 +3,6 @@
 {% block title %}Cart{% endblock %}
 
 {% block content %}
-<head>  
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-</head>
 <main data-aos="fade" data-aos-delay="0">
     <div class="main-content">
         <!-- breadcrumb -->
@@ -48,12 +45,11 @@
                                 so'm</font></font></h3>
                             <div class="products-cnt-form" data-counter="1">
                                 <a class="dicrement__item"
-                                href="{% url 'fabrics_main:change_quantity' s.product.id %}?action=decrease">-</a>
+                                   href="{% url 'fabrics_main:change_quantity' s.product.id %}?action=decrease">-</a>
                                 <h class="justify-content-between"><strong>{{ s.quantity }}</strong></h>
-                                <a 
-                                    class="increment__item"
-                                    href="{% url 'fabrics_main:change_quantity' s.product.id %}?action=increase"
-                                >+</a>
+                                <a class="increment__item"
+                                   href="{% url 'fabrics_main:change_quantity' s.product.id %}?action=increase">+</a>
+
                             </div>
                         </div>
                     </div>
@@ -67,9 +63,9 @@
                         <div class="col-md-6 p-h-15 flex">
                             <a href="{% url 'fabrics_main:delete_all' %}"
                                class="m-v-5 text-center btn-def inline-block">
-                                <b>
+                                <p>
                                     Очистить корзину
-                                </b>
+                                </p>
                             </a>
                         </div>
                         <div class="col-md-6 p-h-15 flex" style="justify-content: flex-end;"><h4>Итого к оплате</h4>
@@ -93,5 +89,4 @@
         </div>
     </div>
 </main>
-<script type="text/javascript"></script>
 {% endblock %}

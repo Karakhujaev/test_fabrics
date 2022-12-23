@@ -109,7 +109,7 @@
 
                     <div class="text-center carousel-items">
                         {% for product in products %}
-                        <figure class="hover-content hover-product">
+                        <figure key="{{ product.pk }}" class="hover-content hover-product">
                             <div class="wrapper">
                                 <div class="img-content">
                                     <div class="img"

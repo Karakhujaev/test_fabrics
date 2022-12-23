@@ -46,11 +46,11 @@
     <noscript><img height="1" width="1" style="display:none" alt="None"
             src="https://www.facebook.com/tr?id=384185815493393&amp;ev=PageView&amp;noscript=1" /></noscript>
 
-
+        
     <link rel="shortcut icon" href="{% static 'images/image.png' %}" type="image/x-icon" />
     <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'banafa-ru/css/edited.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'banafa-ru/css/main2.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'banafa-ru/css/main.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'banafa-ru/rs-plugin/css/settings.css' %}" />
 
     <script>
@@ -493,7 +493,7 @@
                                 <div class="pie-flex-center">
                                     <div><img src="{% static 'banafa-ru/img/basket.png' %}"></div>
                                 </div>
-                                <div class="basket-circle"><span class="bakset-cnt">0</span></div>
+                                <div class="basket-circle"><span class="bakset-cnt">{{ cart|length }}</span></div>
                             </a>
                         </div>
                     </div>

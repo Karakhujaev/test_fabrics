@@ -3967,6 +3967,19 @@ p {
     .lead {
         font-size: 21px;
     }
+
+    
+}
+
+@media (max-width: 768px) {
+    .btn-def{
+        width: 100%;
+        font-weight: 700;
+    }
+
+    .desc-content h3{
+        font-size: 17px;
+    }
 }
 
 small,
@@ -8008,6 +8021,14 @@ tbody.collapse.in {
         background-color: #faebd708;
         color: #192b56;
         border: 1px solid #192b56;
+        width: 100%;
+    }
+
+    .btn-def{
+        width: 80%;
+        margin: 0px;
+        font-weight: 700;
+
     }
 }
 
@@ -22284,3 +22305,17 @@ img[auto] {
 .item_texts {
     color: white !important;
 }
+
+
+/* 
+if (text.innerHTML == 'LIKED'){
+    text.innerHTML = 'LIKE';
+    text.style.color = "#f7721c"; // IT WORKS
+    box.style.border = "1px solid black"; // IT WORKS
+    heart.style.fill = "#f7721c"; // IT WORKS
+}else{
+    text.innerHTML = 'LIKED';
+    text.style.color = "red"; // IT WORKS
+    box.style.border = "1px solid red"; // IT WORKS
+    heart.style.fill = "red"; // IT WORKS
+} */

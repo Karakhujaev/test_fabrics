@@ -29,10 +29,10 @@ urlpatterns = [
     path('add-to-cart/<int:product_id>/', add_to_cart, name='addtocard'),
 
     path('change-quantity/<int:product_id>/', change_quantity, name='change_quantity'),
-
+    
     path('remove-cart/<int:product_id>/', remove_cart, name='remove_cart'),
 
-    path('delete-cart/', CartAllDeleteView.as_view(), name='delete_all'),
+    path('delete-cart/', delete_all, name='delete_all'),
 
     path('view-cart/', view_cart, name='view_cart'),
 
